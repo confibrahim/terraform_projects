@@ -19,14 +19,6 @@ EC2
 VPC
 Cloud Init
 Nginx
-Structure
-terraform_projects/
-├── environments/
-│   └── dev/
-├── modules/
-│   ├── vpc/
-│   └── cloudinit/
-└── provider.tf
 
 Requirements
 Terraform
