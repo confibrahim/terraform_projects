@@ -1,0 +1,28 @@
+#cloud-config
+
+package_update: true
+
+packages:
+  - nginx
+
+write_files:
+
+  - path: /var/www/html/index.html
+    owner: www-data:www-data
+    permissions: '0644'
+    content: |
+      <!DOCTYPE html>
+      <html>
+      <head>
+        <title>AWS DevOps Project</title>
+      </head>
+      <body>
+        <h1>My AWS Server</h1>
+        <p>Deployed using Terraform + Cloud-Init + Nginx</p>
+      </body>
+      </html>
+
+runcmd:
+  - rm -f /var/www/html/index.nginx-debian.html
+  - systemctl enable nginx
+  - systemctl restart nginx
