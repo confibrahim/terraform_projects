@@ -3,15 +3,6 @@ name: Terraform apply
 on: 
    push: 
    workflow_dispatch:
-    inputs: 
-     terraform command: 
-      description: 'choose terraform coomand to run'
-      required: true 
-      type: choice
-      options: 
-       - Terraform apply
-       - Automate terraform linting using terraform fmt 
-       - Terraform destroy
 
 
 jobs:
