@@ -1,7 +1,6 @@
 name: Automate terraform linting using terraform fmt 
 
-on: 
-   push: 
+on:  
    workflow_dispatch:
 
 jobs:
