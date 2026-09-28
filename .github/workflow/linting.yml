@@ -24,7 +24,7 @@ jobs:
       - name: Set up Terraform
         uses: hashicorp/setup-terraform@v4
         with:
-          terraform_version: "6.64.0"
+          terraform_version: "6.0"
 
       - name: Terraform init
         run: terraform init
