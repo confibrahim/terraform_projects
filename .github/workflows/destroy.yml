@@ -1,6 +1,17 @@
 name: Terraform destroy 
 
-on: push 
+on: 
+   push: 
+   workflow_flow:
+    inputs: 
+     terraform command: 
+      description: 'choose terraform coomand to run'
+      required: true 
+      type: choice
+      options: 
+       - terraform apply
+       - terraform fmt 
+       - terraform destroy 
 
 
 jobs:
