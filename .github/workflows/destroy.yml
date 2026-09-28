@@ -1,29 +1,16 @@
 name: Terraform destroy 
 
 on: 
-   push: 
    workflow_dispatch:
-    inputs: 
-     terraform command: 
-      description: 'choose terraform coomand to run'
-      required: true 
-      type: choice
-      options: 
-       - terraform apply
-       - Automate terraform linting using terraform fmt 
-       - terraform destroy 
+    
 
 
 jobs:
   build:
     name: Build and Test
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        shell: bash
-        working-directory: terraform_projects
-
     steps:
+
       - name: Checkout code
         uses: actions/checkout@v6
 
@@ -38,6 +25,9 @@ jobs:
         uses: hashicorp/setup-terraform@v4
         with:
           terraform_version: "1.14.6"
+      
+      - name: terraform init
+        uses: terraform init
       
       - name: terraform destroy
         uses: terraform destroy --auto-approve 
