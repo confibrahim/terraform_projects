@@ -5,11 +5,6 @@ terraform {
       version = "~> 6.0"
     }
   }
-  backend "s3" {
-    bucket = "terraform-state-ibrahim-v2"
-    key    = "terraform.tfstate"
-    region = "eu-west-2"
-  }
 }
 
 
