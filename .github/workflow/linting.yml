@@ -24,7 +24,7 @@ jobs:
       - name: Set up Terraform
         uses: hashicorp/setup-terraform@v2
         with:
-          terraform_version: 1.7.6
+          terraform_version: latest
 
       - name: Terraform init
         run: terraform init
@@ -39,8 +39,7 @@ jobs:
         run: terraform plan
 
       - name: Terraform apply
-        run: terraform apply -auto-approve
-      
+        run: terraform apply -auto-approve  
 
       
 
