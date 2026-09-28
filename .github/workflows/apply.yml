@@ -2,11 +2,6 @@ name: Terraform apply
 
 on: push 
 
-env:
-  # AWS region for Terraform
-
-  AWS_REGION: "eu-west-2"
-
 
 jobs:
   build:

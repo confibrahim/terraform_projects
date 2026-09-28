@@ -1,11 +1,6 @@
 name: Automate terraform linting using terraform fmt 
 
 on: push 
-
-env:
-  # AWS region for Terraform
-
-  AWS_REGION: "eu-west-2"
   
 
 jobs:
