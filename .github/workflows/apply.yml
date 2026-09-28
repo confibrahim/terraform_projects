@@ -9,9 +9,9 @@ on:
       required: true 
       type: choice
       options: 
-       - terraform apply
-       - terraform fmt 
-       - terraform destroy
+       - Terraform apply
+       - Automate terraform linting using terraform fmt 
+       - Terraform destroy
 
 
 

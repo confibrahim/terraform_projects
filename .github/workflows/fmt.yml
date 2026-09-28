@@ -10,7 +10,7 @@ on:
       type: choice
       options: 
        - terraform apply
-       - terraform fmt 
+       - Automate terraform linting using terraform fmt
        - terraform destroy 
   
 
