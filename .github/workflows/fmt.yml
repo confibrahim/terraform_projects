@@ -28,7 +28,7 @@ jobs:
         uses: actions/checkout@v6
       
       - name: connect to aws 
-        uses: uses: aws-actions/configure-aws-credentials@v2
+        uses: aws-actions/configure-aws-credentials@v2
         with:
             aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
             aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
@@ -43,10 +43,10 @@ jobs:
         run: terraform init
        
       - name: terraform fmt 
-        uses: terraforom fmt -check 
+        run: terraforom fmt -check 
 
       - name: terraform validate 
-        uses: terraform validate 
+        run: terraform validate 
 
       - name: Terraform plan
         run: terraform plan
