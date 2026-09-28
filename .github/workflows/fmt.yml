@@ -1,0 +1,46 @@
+name: Automate terraform linting using terraform fmt 
+
+on: push 
+
+env:
+  # AWS region for Terraform
+
+  AWS_REGION: "eu-west-2"
+  
+
+jobs:
+  build:
+    name: Build and Test
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash
+        working-directory: terraform_projects
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v6
+      
+      - name: connect to aws 
+        uses: uses: aws-actions/configure-aws-credentials@v2
+          with:
+            aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+            aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+            aws-region: ${{ env.AWS_REGION }}
+
+      - name: Set up Terraform
+        uses: hashicorp/setup-terraform@v4
+        with:
+          terraform_version: "1.14.6"
+
+      - name: Terraform init
+        run: terraform init
+       
+      - name: terraform fmt 
+        uses: terraforom fmt -check 
+
+      - name: terraform validate 
+        uses: terraform validate 
+
+      - name: Terraform plan
+        run: terraform plan
