@@ -2,7 +2,7 @@ name: Terraform apply
 
 on: 
    push: 
-   workflow_flow:
+   workflow_dispatch:
     inputs: 
      terraform command: 
       description: 'choose terraform coomand to run'
