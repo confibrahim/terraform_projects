@@ -1,11 +1,11 @@
-name: Automate terraform linting using terraform fmt 
+name: Terraform destroy 
 
 on: push 
 
 env:
-  # AWS credentials for Terraform
-  aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-  aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+  # AWS region for Terraform
+
+  AWS_REGION: "eu-west-2"
 
 
 jobs:
